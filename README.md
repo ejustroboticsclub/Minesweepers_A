@@ -1,6 +1,16 @@
 # Minesweepers_A
-Minesweepers Competition'2023 Team A
+Minesweepers Competition'2024 Team A
 
-![alt text](https://github.com/ejustroboticsclub/Minesweepers_A/blob/main/Minesweepers.jpg)
-![alt text](https://github.com/ejustroboticsclub/Minesweepers_A/blob/main/IMG_0124.JPG)
-
+## Team Members:
+ Team leader: Mariam Gadallah
+ Vice team leader: Ahmed Anwar
+ Software Team members:
+ - Noura Maklad
+ - Mohamed Mahdy
+Electrical Team members:
+- Youssef Hatem
+- Mahmoud Sayed
+Mechanical team members:
+- Mahmoud Essam
+- Alaaeldin Manaa
+- Omar Elgamal
