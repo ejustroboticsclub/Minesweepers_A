@@ -56,12 +56,13 @@ class MotorController:
         # Callback function for cmd_vel messages
         self.linear_vel = msg.linear.x
         self.angular_vel = msg.angular.z
-        
+        rospy.loginfo(f"Linear Vel: {self.linear_vel}, Angular Vel: {self.angular_vel}")
+
     def publish_motor_speeds(self):
         # Calculate motor speeds based on linear and angular velocities
-        linear_velocity_fl = self.linear_vel - (self.angular_vel * self.robot_radius)
+        linear_velocity_fl = self.linear_vel + (self.angular_vel * self.robot_radius)
         linear_velocity_fr = self.linear_vel + (self.angular_vel * self.robot_radius)
-        linear_velocity_rl = self.linear_vel - (self.angular_vel * self.robot_radius)
+        linear_velocity_rl = self.linear_vel + (self.angular_vel * self.robot_radius)
         linear_velocity_rr = self.linear_vel + (self.angular_vel * self.robot_radius)
         
         # Clip velocities to stay within the maximum speed
@@ -81,6 +82,9 @@ class MotorController:
         self.set_motor_speed(self.pwm2, self.MOTOR2_DIR, motor_speed_fr)
         self.set_motor_speed(self.pwm3, self.MOTOR3_DIR, motor_speed_rl)
         self.set_motor_speed(self.pwm4, self.MOTOR4_DIR, motor_speed_rr)
+
+        rospy.loginfo(f"Motor Speeds - FL: {motor_speed_fl}, FR: {motor_speed_fr}, RL: {motor_speed_rl}, RR: {motor_speed_rr}")
+
 
     def set_motor_speed(self, pwm, dir_pin, speed):
         GPIO.output(dir_pin, GPIO.HIGH if speed >= 0 else GPIO.LOW)
