@@ -43,6 +43,9 @@
 - Mapping GUI 
   - [x] In Progress 
   - [ ] Done
+- Streaming
+  - [x] In Progress 
+  - [ ] Done
 - Launch Files preparation 
   - [ ] In Progress 
   - [ ] Done
