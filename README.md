@@ -21,3 +21,46 @@
 - Mahmoud Essam
 - Alaaeldin Manaa
 - Omar Elgamal
+
+## To-Do List:
+
+- Make the robot move 
+  - [ ] In Progress 
+  - [ ] Done
+- Assign a button for gripper 
+  - [ ] In Progress 
+  - [ ] Done
+- Mapping
+  - IMU Calibration code
+    - [ ] In Progress 
+    - [ ] Done
+  - IMU Madgwick
+    - [ ] In Progress 
+    - [ ] Done
+  - Kalman Filter
+    - [ ] In Progress 
+    - [ ] Done
+- Mapping GUI 
+  - [ ] In Progress 
+  - [ ] Done
+- Launch Files preparation 
+  - [ ] In Progress 
+  - [ ] Done
+- Assemble electrical components 
+  - [ ] In Progress 
+  - [ ] Done
+- Fabricate mechanical parts 
+  - [ ] In Progress 
+  - [ ] Done
+- Assemble mechanical parts 
+  - [ ] In Progress 
+  - [ ] Done
+- Test and integrate all components 
+  - [ ] In Progress 
+  - [ ] Done
+- Prepare Report and Video
+  - [ ] In Progress 
+  - [ ] Done
+- Prepare for final presentation 
+  - [ ] In Progress 
+  - [ ] Done
