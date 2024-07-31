@@ -25,7 +25,7 @@
 ## To-Do List:
 
 - Make the robot move 
-  - [ ] In Progress 
+  - [x] In Progress 
   - [ ] Done
 - Assign a button for gripper 
   - [ ] In Progress 
