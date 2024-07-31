@@ -41,7 +41,7 @@
     - [ ] In Progress 
     - [ ] Done
 - Mapping GUI 
-  - [ ] In Progress 
+  - [x] In Progress 
   - [ ] Done
 - Launch Files preparation 
   - [ ] In Progress 
