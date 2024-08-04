@@ -42,7 +42,7 @@
     - [ ] Done
 - Mapping GUI 
   - [x] In Progress 
-  - [ ] Done
+  - [x] Done
 - Streaming
   - [x] In Progress 
   - [ ] Done
