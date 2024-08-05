@@ -67,3 +67,9 @@
 - Prepare for final presentation 
   - [ ] In Progress 
   - [ ] Done
+--------------------------------------------------------------------
+- Notes:
+  - For Arduino ROS lib navigate to the following link:
+    - [Arduino ROS](https://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup)
+
+      
