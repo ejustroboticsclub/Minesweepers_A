@@ -1,67 +1,62 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from __future__ import print_function
 import rospy
+from geometry_msgs.msg import Twist
 from std_msgs.msg import Int16
 from inputs import get_gamepad
 
 def main():
-    pub = rospy.Publisher('/controller',Int16, queue_size=10)
+    velocity = Twist()
+    pubVelocity = rospy.Publisher('/cmd_vel',Twist, queue_size=10)
+    pubGripper = rospy.Publisher('/controller',Int16, queue_size=10)
     rospy.init_node('control',anonymous=True) 
     while not rospy.is_shutdown():
         events = get_gamepad()
         for event in events:
             if event.code == "ABS_Y":
-                if event.state == 0:
-                    print("Forward")
-                    pub.publish(1)
-                elif event.state == 255:
-                    print("Backward")
-                    pub.publish(2)
-                else:
-                    print("Stop")
-                    pub.publish(0)
+                velocity.linear.x = map(event.state)
             if event.code == "ABS_X":
-                if event.state == 255:
-                    print("Right")
-                    pub.publish(3)
-                elif event.state == 0:
-                    print("Left")
-                    pub.publish(4)
-                else:
-                    print("Stop")
-                    pub.publish(0)
+                velocity.angular.z = -map(event.state)
             if event.code == "BTN_PINKIE":
                 if event.state == 1:
                     print("SpeedUp")
-                    pub.publish(5)
+                    pubGripper.publish(5)
             if event.code == "BTN_BASE2":
                 if event.state == 1:
                     print("SpeedDown")
-                    pub.publish(6)
+                    pubGripper.publish(6)
             if event.code == "BTN_TRIGGER":
                 if event.state == 1:
                     print("ArmUp")
-                    pub.publish(7)
+                    pubGripper.publish(7)
                 else:
                     print("Stop lifting")
-                    pub.publish(9)
+                    pubGripper.publish(9)
             if event.code == "BTN_THUMB2":
                 if event.state == 1:
                     print("ArmDown")
-                    pub.publish(8)
+                    pubGripper.publish(8)
                 else:
                     print("Stop lifting")
-                    pub.publish(9)
+                    pubGripper.publish(9)
             if event.code == "BTN_THUMB":
                 if event.state == 1:
                     print("ReleaseMine")
-                    pub.publish(10)
+                    pubGripper.publish(10)
             if event.code == "BTN_TOP":
                 if event.state == 1:
                     print("HoldMine")
-                    pub.publish(11)
+                    pubGripper.publish(11)
 
+            print(str(velocity))
+            pubVelocity.publish(velocity)
+
+def map(x, in_min=0, in_max=255, out_min=1, out_max=-1):
+    if x in range(120,135):
+       return 0
+    else:
+        return float(out_min + (x - in_min) * (out_max - out_min) / (in_max - in_min))
                 
 if __name__=="__main__":            
     main()
