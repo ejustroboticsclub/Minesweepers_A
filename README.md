@@ -26,7 +26,7 @@
 
 - Make the robot move 
   - [x] In Progress 
-  - [ ] Done
+  - [x] Done
 - Assign a button for gripper 
   - [ ] In Progress 
   - [ ] Done
@@ -53,13 +53,13 @@
   - [ ] In Progress 
   - [ ] Done
 - Fabricate mechanical parts 
-  - [ ] In Progress 
-  - [ ] Done
+  - [x] In Progress 
+  - [x] Done
 - Assemble mechanical parts 
-  - [ ] In Progress 
+  - [x] In Progress 
   - [ ] Done
 - Test and integrate all components 
-  - [ ] In Progress 
+  - [x] In Progress 
   - [ ] Done
 - Prepare Report and Video
   - [ ] In Progress 
@@ -71,5 +71,5 @@
 - Notes:
   - For Arduino ROS lib navigate to the following link:
     - [Arduino ROS](https://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup)
-
+  - Must add ip for pc in pi host list (/etc/hosts)  in the following format : ip username ,and vice versa 
       
