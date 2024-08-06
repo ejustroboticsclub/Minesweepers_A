@@ -71,5 +71,5 @@
 - Notes:
   - For Arduino ROS lib navigate to the following link:
     - [Arduino ROS](https://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup)
-  - Must add ip for pc in pi host list (/etc/hosts)  in the following format : ip username and vice versa 
+  - Must add ip for pc in pi host list (/etc/hosts)  in the following format : ip username ,and vice versa 
       
