@@ -1,0 +1,5 @@
+{
+    "configuration": "cpu=atmega2560",
+    "board": "arduino:avr:mega",
+    "sketch": "Minesweepers_A/arduino_code/all_code_reformatted/all_code_reformatted.ino"
+}
