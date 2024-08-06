@@ -1,3 +1,7 @@
+# motors node
+- on RPi
+  - rosrun motors motor_controller.py
+
 # ros-mpu9250-ahrs
 ROS driver with imu + magnetometer fusion for the Raspberry Pi in use with the MPU9250.
 It calibrates all sensors during the start and starts publishing all filtered states once the calibration is finished.
