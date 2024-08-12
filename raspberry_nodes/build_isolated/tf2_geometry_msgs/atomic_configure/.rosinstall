@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/pi/catkin_ws/devel_isolated/tf2_geometry_msgs/setup.sh
