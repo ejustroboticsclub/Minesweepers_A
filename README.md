@@ -1,4 +1,4 @@
-# Minesweepers_A
+# Minesweepers_A 2024
 **Minesweepers Competition'2024 Team A**
 
 ## Team Members:
