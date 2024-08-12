@@ -1,6 +1,7 @@
 // libraries
 /* Install EnableInterrupt library as it won't work without it,
 the IDE will not provide the error when verifying*/
+
 #include <QuadratureEncoder.h>
 #include <ros.h>
 #include <std_msgs/Int32.h>
@@ -11,10 +12,13 @@ the IDE will not provide the error when verifying*/
 #define metal_detector 4
 #define alarm 5
 #define magnet 6
+#define buzzer 7
+#define Grip_Dir 8
+#define Grip_Speed 9
 
 // objects
-Encoders leftEncoder(20, 21);
-Encoders rightEncoder(2, 3);
+Encoders leftEncoder(20,21);
+Encoders rightEncoder(2,3);
 
 // global variables
 unsigned long lastMilli = 0;
@@ -24,8 +28,8 @@ int previous_metal = 0;
 float metal_average = 0;
 int counter = 0;
 
-// ROS
-ros::NodeHandle nh;
+//ROS
+ros::NodeHandle  nh;
 
 // left ticks publisher
 std_msgs::Int32 left_ticks_count;
@@ -39,86 +43,96 @@ ros::Publisher right_ticks("right_ticks", &right_ticks_count);
 std_msgs::Int8 alert;
 ros::Publisher detection("detection", &alert);
 
+
 // callback for subscriber
-void messageCb(const std_msgs::Int16 &gripper)
-{
-  if (gripper.data == 11)
-  {
-    digitalWrite(magnet, LOW);
+void messageCb( const std_msgs::Int16 &gripper){
+  if (gripper.data == 11){
+    digitalWrite(magnet,LOW);  
   }
-  else if (gripper.data == 10)
-  {
-    digitalWrite(magnet, HIGH);
+  else if (gripper.data == 10){
+    digitalWrite(magnet,HIGH);  
   }
-}
+
+  else if (gripper.data == 8){
+    digitalWrite(Grip_Dir, HIGH);
+    analogWrite(Grip_Speed,100);
+  }
+  else if (gripper.data == 7){
+    digitalWrite(Grip_Dir, LOW);
+    analogWrite(Grip_Speed,100);
+  }
+  else{
+    digitalWrite(Grip_Dir, HIGH);
+    analogWrite(Grip_Speed,0);
+    }
+  }
 
 // controller subscriber
 ros::Subscriber<std_msgs::Int16> magnetism("controller", messageCb);
 
-void setup()
-{
+void setup() {
 
   // pin modes
   pinMode(metal_detector, INPUT);
   pinMode(alarm, OUTPUT);
   pinMode(magnet, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+
 
   // ros nodes initialization
   nh.initNode();
   nh.advertise(left_ticks);
-  nh.advertise(right_ticks);
+  nh.advertise(right_ticks); 
   nh.subscribe(magnetism);
   nh.advertise(detection);
-
+  
   // initialize relay as off
   digitalWrite(alarm, HIGH);
   digitalWrite(magnet, HIGH);
 }
 
-void loop()
-{
+void loop() {
 
   // metal detection and alarm code
   metal = digitalRead(metal_detector);
-  // metal_average = (metal_average* 9 / 10) + (metal * 1 / 10);
+  //metal_average = (metal_average* 9 / 10) + (metal * 1 / 10);
 
-  if (metal == HIGH)
-  {
+  if (metal == HIGH) {
     counter++;
-    digitalWrite(alarm, LOW);
-  }
+    digitalWrite(alarm,LOW);
+    digitalWrite(buzzer, HIGH);
+    }
 
-  else
-  {
+  else{
     counter = 0;
     digitalWrite(alarm, HIGH);
-    if (previous_metal != metal)
-    {
+    digitalWrite(buzzer, LOW);
+    if (previous_metal != metal){
       previous_metal = 0;
       alert.data = 0;
       detection.publish(&alert);
     }
-  }
+    }
 
-  if (counter > 7)
-  {
-    if (previous_metal != metal)
-    {
+  if (counter > 7) {
+    if (previous_metal != metal){
       previous_metal = 1;
       alert.data = 1;
       detection.publish(&alert);
-    }
-  }
+      }
+    }  
   // encoders code
-  if (millis() - lastMilli > 50)
-  {
-
-    left_ticks_count.data = long(leftEncoder.getEncoderCount());
+  if(millis()-lastMilli > 50){ 
+    
+  /* Install EnableInterrupt library as it won't work without it,
+the IDE will not provide the error when verifying*/
+  left_ticks_count.data = long(leftEncoder.getEncoderCount());
     right_ticks_count.data = long(rightEncoder.getEncoderCount());
-    left_ticks.publish(&left_ticks_count);
-    right_ticks.publish(&right_ticks_count);
+    left_ticks.publish( &left_ticks_count );
+    right_ticks.publish( &right_ticks_count );
     lastMilli = millis();
   }
 
   nh.spinOnce();
+
 }

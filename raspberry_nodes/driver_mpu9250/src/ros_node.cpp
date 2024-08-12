@@ -201,9 +201,9 @@ void ros_node::data_callback(driver::data data)
         ros_node::m_publisher_magnetometer.publish(message_mag);
     }
 
-    // Create temperature message.
-    sensor_msgs_ext::temperature message_temp;
-    message_temp.temperature = static_cast<double>(data.temp);
-    // Publish temperature message.
-    ros_node::m_publisher_temperature.publish(message_temp);
+    // // Create temperature message.
+    // sensor_msgs_ext::temperature message_temp;
+    // message_temp.temperature = static_cast<double>(data.temp);
+    // // Publish temperature message.
+    // ros_node::m_publisher_temperature.publish(message_temp);
 }
