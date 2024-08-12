@@ -27,9 +27,9 @@
 - Make the robot move 
   - [x] In Progress 
   - [x] Done
-- Assign a button for gripper 
+- Assign buttons for gripper 
   - [x] In Progress 
-  - [ ] Done
+  - [X] Done
 - Mapping
   - IMU Calibration code
     - [x] In Progress 
