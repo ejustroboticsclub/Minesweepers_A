@@ -28,29 +28,29 @@
   - [x] In Progress 
   - [x] Done
 - Assign a button for gripper 
-  - [ ] In Progress 
+  - [x] In Progress 
   - [ ] Done
 - Mapping
   - IMU Calibration code
-    - [ ] In Progress 
-    - [ ] Done
+    - [x] In Progress 
+    - [x] Done
   - IMU Madgwick
-    - [ ] In Progress 
+    - [x] In Progress 
     - [ ] Done
   - Kalman Filter
-    - [ ] In Progress 
+    - [x] In Progress 
     - [ ] Done
 - Mapping GUI 
   - [x] In Progress 
   - [x] Done
 - Streaming
   - [x] In Progress 
-  - [ ] Done
+  - [x] Done
 - Launch Files preparation 
   - [ ] In Progress 
   - [ ] Done
 - Assemble electrical components 
-  - [ ] In Progress 
+  - [X] In Progress 
   - [ ] Done
 - Fabricate mechanical parts 
   - [x] In Progress 
@@ -71,5 +71,4 @@
 # Notes:
   - For Arduino ROS lib navigate to the following link:
     - [Arduino ROS](https://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup)
-  - Must add ip for pc in pi host list (/etc/hosts)  in the following format : ip username ,and vice versa 
-      
+  - Must add ip for pc in pi host list (/etc/hosts)  in the following format : ip username ,and vice versa
