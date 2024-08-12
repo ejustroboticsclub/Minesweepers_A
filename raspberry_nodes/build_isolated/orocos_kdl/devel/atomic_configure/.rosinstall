@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/pi/catkin_ws/build_isolated/orocos_kdl/devel/devel/setup.sh
