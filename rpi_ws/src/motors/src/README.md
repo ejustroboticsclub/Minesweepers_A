@@ -74,7 +74,7 @@ The Motor Controller ROS Node is a Python-based ROS node designed to control a d
 
 1. **Launch the Node:**
     ```bash
-    roslaunch <package_name> motor_controller.launch
+    roslaunch motors motor_controller.py
     ```
 
 2. **Send Velocity Commands:**
