@@ -1,9 +1,8 @@
-Here is the corrected and properly formatted version of your instructions:
-
----
-
 ### Dependencies
-
+- **tf & tf2**
+```
+sudo apt-get install ros-${ROS_DISTRO}-turtle-tf2 ros-${ROS_DISTRO}-tf2-tools ros-${ROS_DISTRO}-tf
+```
 - **wiringPi**
   - Install it with:
     ```bash
@@ -47,5 +46,3 @@ Here is the corrected and properly formatted version of your instructions:
        ```plaintext
        crw-rw-rw- 1 root root 89, 1 Apr 21  2022 /dev/i2c-1
        ```
-
----
