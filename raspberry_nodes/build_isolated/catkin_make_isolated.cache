@@ -1,2 +1,0 @@
-diffodom:imu_filter_madgwick:imu_msgs:motors:mpu6050:orocos_kinematics_dynamics/orocos_kdl:orocos_kinematics_dynamics/python_orocos_kdl:robot_pose_ekf:tf2_geometry_msgs
--G Unix Makefiles -DCATKIN_DEVEL_PREFIX=/home/pi/catkin_ws/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/pi/catkin_ws/install_isolated

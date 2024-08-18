@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/pi/rpi_ws/devel/setup.sh

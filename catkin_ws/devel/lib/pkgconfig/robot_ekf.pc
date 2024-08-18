@@ -1,0 +1,8 @@
+prefix=/home/ahmed/catkin_ws/devel
+
+Name: robot_ekf
+Description: Description of robot_ekf
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
