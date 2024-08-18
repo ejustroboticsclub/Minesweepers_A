@@ -75,12 +75,13 @@
 
 <div align="center">
 
-**سمـّي و دوّر**
+<span style="font-size: 100px; font-weight: 1200;">**سمـّي و دوّر**</span>
 
 </div>
 
 - Start by launching `sammy.py` on your PC using `python3 sammy.py`.
 - Then, on RPi, launch `dawar.py` by using `python3 dawar.py`.
+
 --------------------------------------------------------------------
 
 # Notes:
