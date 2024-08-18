@@ -1,5 +1,5 @@
 
-#### Joystick Node
+### Joystick Node
 
 - Run the joystick node:
   - `rosrun joy joystick.py`
@@ -10,7 +10,7 @@
   - `cmd_vel` → Joystick Topic
   - `controller` → Gripper Topic
 
-### Message Types:
+#### Message Types:
 
 - `geometry_msgs`
 - `std_msgs`
