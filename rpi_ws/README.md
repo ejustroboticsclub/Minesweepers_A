@@ -1,3 +1,7 @@
+### How to launch all RPi nodes:
+  ```
+  python3 dawar.py
+  ```
 ### Alerts
 - Always Check for Undervoltage and Temprature in your RPi if Undervoltage detected you should use another power source
   - check it with:
