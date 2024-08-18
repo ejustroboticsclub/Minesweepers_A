@@ -1,8 +1,0 @@
-prefix=/home/pi/catkin_ws/devel_isolated/motors
-
-Name: motors
-Description: Description of motors
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

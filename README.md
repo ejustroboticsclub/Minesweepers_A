@@ -20,6 +20,11 @@
 - Alaaeldin Manaa
 - Omar Elgamal
 
+## Workspaces:
+- catkin_ws (Laptop Workspace)
+- rpi_ws (Raspberry Pi Workspace)
+
+
 ## To-Do List:
 
 - Make the robot move         (LEFT Stick or Buttons on the LEFT side)

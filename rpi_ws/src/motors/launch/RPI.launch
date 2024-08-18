@@ -1,0 +1,16 @@
+<launch>
+    <!-- Motor Controller Node -->
+    <node pkg="motors" type="motor_controller.py" name="motor_controller" output="screen" />
+
+    <!-- MPU6050 Node -->
+    <!-- <node pkg="mpu6050" type="mpu6050_node" name="mpu6050_node" output="screen" /> -->
+
+    <!-- Rosserial Node -->
+    <node name="rosserial_node" pkg="rosserial_arduino" type="serial_node.py" output="screen">
+        <param name="port" value="/dev/ttyACM0" />
+    </node>
+
+    <!-- MPU6050 Launch File-->
+    <include file="$(find mpu6050)/launch/mpu6050.launch" />
+   
+</launch>

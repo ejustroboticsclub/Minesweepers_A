@@ -1,8 +1,0 @@
-prefix=/home/pi/catkin_ws/install_isolated
-
-Name: diffodom
-Description: Description of diffodom
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
