@@ -1,6 +1,6 @@
 # EKF for Pose Estimation
 
-This ROS package implements an Extended Kalman Filter (EKF) for estimating the pose of a robot using odometry and IMU data. It is designed to run on a Raspberry Pi with ROS and provides a robust method for fusing sensor data to improve pose estimation accuracy.
+This ROS package implements an Extended Kalman Filter (EKF) to estimate the pose of a robot using odometry and IMU data. It is designed to fuse sensor data to improve pose estimation accuracy.
 
 ## Overview
 
@@ -11,7 +11,7 @@ The `robot_ekf` package includes:
 
 ## Features
 
-- **State Prediction**: Predicts robot's state using odometry and IMU data.
+- **State Prediction**: Predicts the robot's state using odometry and IMU data.
 - **State Update**: Updates the state estimate with incoming sensor measurements.
 - **Message Publishing**: Publishes the estimated pose to the `/pose_combined` topic.
 
@@ -59,11 +59,16 @@ Set the following parameters for EKF in your ROS launch file or using the rospar
 ```
 **Running the node**
 ```
-roslaunch ekf_pose_estimation ekf.launch
+roslaunch robot_ekf kalman_dyn.py
+```
+**Running GUI for tunning covariance**
+```
+python3 gui.py
 ```
 
 **Node Description**
 ekf_node/kalman_dyn.py: Main script for running the EKF. It subscribes to /odom and /imu_data, performs EKF updates, and publishes the pose to /pose_combined.
+note that *dyn* refers to dynamic as covariances can be tuned while working which helped a lot.
 
 To create the message types required in your ROS node, you'll need to create a `.msg` file to define the custom message and update the `CMakeLists.txt` and `package.xml` accordingly. However, since you are only using existing ROS messages like `Pose2D`, `Imu`, and `Odometry`, there's no need to define new messages.
 
