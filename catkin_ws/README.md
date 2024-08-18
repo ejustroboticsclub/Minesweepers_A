@@ -1,7 +1,15 @@
-### How to launch all laptop nodes:
+### How to launch all laptop nodes
   ```
   python3 sammy.py
   ```
+### Building the packages
+  ```
+  catkin_make
+  ```
+  - some times it stucks when using catkin_make so another solution is specifying number of jobs will be made at the same time, I prefer to make it only **1** job which is so good in Raspberry Pi by using :
+    ```
+    catkin_make -j1
+    ```
 ### Dependencies
 - `inputs`
 - `opencv-python`
