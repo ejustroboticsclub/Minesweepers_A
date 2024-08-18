@@ -3,10 +3,8 @@
 
 ## Team Members:
 
-### Team Leader:
+### Team Leaders:
 - Mariam Gadallah
-
-### Vice Team Leader:
 - Ahmed Anwar
 
 ### Software Team Members:
@@ -24,37 +22,37 @@
 
 ## To-Do List:
 
-- Make the robot move 
+- Make the robot move         (LEFT Stick or Buttons on the LEFT side)
   - [x] In Progress 
   - [x] Done
-- Assign buttons for gripper 
+- Assign buttons for gripper  (RIGHT Stick or Buttons on the RIGHT side)
   - [x] In Progress 
   - [X] Done
 - Mapping
   - IMU Calibration code
     - [x] In Progress 
     - [x] Done
-  - IMU Madgwick
+  - IMU Madgwick (MPU 6050 Calibration node)
     - [x] In Progress 
-    - [X] Done
+    - [x] Done
   - Kalman Filter
     - [x] In Progress 
     - [ ] Done
 - Mapping GUI 
   - [x] In Progress 
-  - [x] Done
+  - [ ] Done
 - Streaming
   - [x] In Progress 
   - [x] Done
 - Launch Files preparation 
-  - [ ] In Progress 
+  - [x] In Progress 
   - [ ] Done
 - Assemble electrical components 
   - [X] In Progress 
   - [ ] Done
 - Fabricate mechanical parts 
   - [x] In Progress 
-  - [x] Done
+  - [ ] Done
 - Assemble mechanical parts 
   - [x] In Progress 
   - [ ] Done
@@ -62,9 +60,9 @@
   - [x] In Progress 
   - [ ] Done
 - Prepare Report and Video
-  - [ ] In Progress 
+  - [x] In Progress 
   - [ ] Done
-- Prepare for final presentation 
+- Prepare for the final presentation 
   - [ ] In Progress 
   - [ ] Done
 --------------------------------------------------------------------
