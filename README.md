@@ -36,7 +36,7 @@
     - [x] Done
   - IMU Madgwick
     - [x] In Progress 
-    - [ ] Done
+    - [X] Done
   - Kalman Filter
     - [x] In Progress 
     - [ ] Done
