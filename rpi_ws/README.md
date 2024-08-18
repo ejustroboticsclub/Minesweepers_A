@@ -2,6 +2,8 @@
   ```
   python3 dawar.py
   ```
+  dawar → دوّر
+
 ### Alerts
 - Always Check for Undervoltage and Temprature in your RPi if Undervoltage detected you should use another power source
   - check it with:
