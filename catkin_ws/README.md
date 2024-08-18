@@ -1,3 +1,7 @@
+### How to launch all laptop nodes:
+  ```
+  python3 sammy.py
+  ```
 ### Dependencies
 - `inputs`
 - `opencv-python`
