@@ -75,7 +75,7 @@
 
 <div align="center">
 
-<span style="font-size: 100px; font-weight: 1200;">**سمـّي و دوّر**</span>
+**سمـّي و دوّر**
 
 </div>
 
