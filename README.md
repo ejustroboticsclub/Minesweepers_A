@@ -74,6 +74,7 @@
 ## How to launch
 - Start by launching sammy.py on your PC using ``` python3 sammy.py```
 - Then on RPi launch dawar.py by using ``` python3 dawar.py```
+- 
 **سمـّي و دوّر** 
 --------------------------------------------------------------------
 
