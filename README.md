@@ -37,7 +37,7 @@
     - [x] Done
   - Kalman Filter
     - [x] In Progress 
-    - [ ] Done
+    - [x] Done
 - Mapping GUI 
   - [x] In Progress 
   - [ ] Done
