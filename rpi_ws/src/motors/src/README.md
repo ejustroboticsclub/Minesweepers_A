@@ -18,18 +18,12 @@ The Motor Controller ROS Node is a Python-based ROS node designed to control a d
 
 ## Installation
 
-1. **Clone the Repository:**
-    ```bash
-    git clone <repository_url>
-    cd <repository_directory>
-    ```
-
-2. **Install Dependencies:**
+1. **Install Dependencies:**
     ```bash
     pip install RPi.GPIO
     ```
 
-3. **Build Your ROS Workspace:**
+2. **Build Your ROS Workspace:**
     - Place this node inside your ROS workspace's `src` directory.
     - Build the workspace:
       ```bash
