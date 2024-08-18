@@ -3,8 +3,7 @@
   - check it with:
     ```
     ./volt.sh
-    ./temp.sh
-    
+    ./temp.sh    
 ### Dependencies
 - **tf & tf2**
 ```
