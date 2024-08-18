@@ -2,6 +2,7 @@
   ```
   python3 sammy.py
   ```
+sammy → سمـّي
 ### Building the packages
   ```
   catkin_make
