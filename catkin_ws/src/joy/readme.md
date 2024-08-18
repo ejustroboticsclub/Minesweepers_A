@@ -6,5 +6,5 @@
     - controller --> Gripper Topic
 
     ### Message Types:
-      - `geometry_msgs`
-      - `std_msgs`
+      - geometry_msgs
+      - std_msgs
