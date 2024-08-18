@@ -3,7 +3,9 @@
 - `opencv-python`
 - `socket`
 - `math`
-
+- `pygame`
+- `scipy`
+- `numpy`
 ### Arduino Code
 
 #### Includes:
@@ -38,3 +40,10 @@
     - `geometry_msgs`
     - `nav_msgs`
     - `std_msgs`
+    - `tf`
+
+  - **robot_ekf package:**
+    - `geometry_msgs`
+    - `tf`
+    - `sensor_msgs`
+    - `nav_msgs`
