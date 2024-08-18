@@ -70,7 +70,10 @@
   - For Arduino ROS lib navigate to the following link:
     - [Arduino ROS](https://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup)
   - Must add ip for pc in pi host list (/etc/hosts)  in the following format : ip username ,and vice versa
-
+  - For MPU6050 Package (it works for MPU 9250 Also) you have to install this on your RPi:
+```
+sudo apt-get install ros-${ROS_DISTRO}-turtle-tf2 ros-${ROS_DISTRO}-tf2-tools ros-${ROS_DISTRO}-tf
+```
 ## Controller Alignemnt
 ![Controller](Controller.png)
 
