@@ -1,0 +1,18 @@
+<launch>
+    <!-- Node from the diffodom package -->
+    <node pkg="diffodom" type="diffodom.py" name="diffodom_node" output="screen"/>
+
+    <!-- Node from the joy package -->
+    <node pkg="joy" type="joystick.py" name="joystick_node" output="screen"/>
+
+    <!-- Node from the mapV2.0 package -->
+    <node pkg="mapV2.0" type="map_node.py" name="map_node" output="screen">
+        <param name="size" value="20"/>
+    </node>
+
+    <!-- Node from the robot_ekf package -->
+    <node pkg="robot_ekf" type="kalman_dyn.py" name="kalman_dyn_node" output="screen"/>
+
+    <!-- Node from the YOLO package -->
+    <node pkg="YOLO" type="display_node.py" name="display_node" output="screen"/>
+</launch>
