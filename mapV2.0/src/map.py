@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Task Description:
 
@@ -12,7 +13,6 @@ The script initializes Pygame, sets up ROS subscribers, and updates the map unti
 
 *****************IMPORTANT: change the pkg name to 'map'**************************
 """
-#!/usr/bin/env python3
 
 import pygame
 import rospy
@@ -48,6 +48,9 @@ surface_mine_img = pygame.Surface((TILE_SIZE, TILE_SIZE))
 surface_mine_img.fill((0, 255, 255))  # Cyan for surface mines
 buried_mine_img = pygame.Surface((TILE_SIZE, TILE_SIZE))
 buried_mine_img.fill((0, 128, 128))  # Teal for buried mines
+robot_img = pygame.image.load('/home/noura/Downloads/robot.png')  
+robot_img = pygame.transform.scale(robot_img, (TILE_SIZE, TILE_SIZE))  
+
 
 # Set up font
 font = pygame.font.Font(None, FONT_SIZE)
@@ -55,9 +58,9 @@ font = pygame.font.Font(None, FONT_SIZE)
 # Button settings
 BUTTON_WIDTH = 60
 BUTTON_HEIGHT = 30
-CORNER_COLOR = (195, 177, 225)  # Semi-transparent blue for corners
-ORIENTATION_COLOR = (248, 200, 220)  # Semi-transparent orange for orientations
-SELECTED_COLOR = (0, 255, 0, 200)  # Semi-transparent green for selected
+CORNER_COLOR = (255, 183, 178)  
+ORIENTATION_COLOR = (255, 218, 193)  
+SELECTED_COLOR = (255, 154, 162)  
 TEXT_COLOR = (255, 255, 255)
 
 # Orientation directions (relative to the corner cells)
@@ -139,7 +142,7 @@ def mine_detection_callback():
     global camera_detected, metal_detected, first_detection
 
     if not selection_complete:
-        rospy.loginfo("Mine detected, but selection of corner and orientation not complete.")
+        rospy.loginfo("Selection of corner and orientation not complete.")
         return
 
     global map_data
@@ -205,10 +208,12 @@ def draw_map(screen):
             coord_text = font.render(f"{chr(65 + x)},{y + 1}", True, (0, 0, 0))
             screen.blit(coord_text, (x * TILE_SIZE + 2, (MAP_HEIGHT - y - 1) * TILE_SIZE + 2))
 
-    # Draw the robot as a blue circle
+       # Calculate robot image position
     robot_screen_x = int(robot_x * TILE_SIZE)
     robot_screen_y = int((MAP_HEIGHT - robot_y - 1) * TILE_SIZE)  # Convert map coordinates to screen coordinates
-    pygame.draw.circle(screen, (0, 0, 255), (robot_screen_x + TILE_SIZE // 2, robot_screen_y + TILE_SIZE // 2), TILE_SIZE // 3)
+
+    # Draw the robot image
+    screen.blit(robot_img, (robot_screen_x, robot_screen_y))
 
     # Draw the arrow to indicate the robot's orientation
     arrow_length = TILE_SIZE // 2  # Length of the arrow
