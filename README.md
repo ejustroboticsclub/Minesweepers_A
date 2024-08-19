@@ -34,10 +34,7 @@
   - [x] In Progress 
   - [X] Done
 - Mapping
-  - IMU Calibration code
-    - [x] In Progress 
-    - [x] Done
-  - IMU Madgwick (MPU 6050 Calibration node)
+  - IMU Calibration code (Madgwick Filter)
     - [x] In Progress 
     - [x] Done
   - Kalman Filter
