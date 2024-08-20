@@ -52,7 +52,7 @@ class DiffTf:
         self.rmult = 0
         self.prev_lencoder = 0
         self.prev_rencoder = 0
-        self.x = 0.6                  # position in xy plane 
+        self.x = 0.0                  # position in xy plane 
         self.y = 0
         self.th = 0
         self.yaw = 0
@@ -63,7 +63,7 @@ class DiffTf:
         # subscriptions
         rospy.Subscriber("left_ticks", Int16, self.lwheelCallback, queue_size=1)
         rospy.Subscriber("right_ticks", Int16, self.rwheelCallback, queue_size=1)
-        rospy.Subscriber("/imu_data", Imu, self.imu_callback)
+        rospy.Subscriber("/imu/data", Imu, self.imu_callback)
 
         self.odomPub = rospy.Publisher("odom", Odometry, queue_size=10)
         self.pose_pub = rospy.Publisher("/robot_2d", Pose2D, queue_size=10)
@@ -133,8 +133,9 @@ class DiffTf:
                 # calculate distance traveled in x and y
                 x = cos( th ) * d
                 y = sin( th ) * d
+                l = 1.55
                 # calculate the final position of the robot
-                self.x = self.x + ( cos( self.th ) * x - sin( self.th ) * y )
+                self.x = self.x + ( cos( self.th ) * x -  sin( self.th ) * y )
                 self.y = self.y + ( sin( self.th ) * x + cos( self.th ) * y )
             if( th != 0):
                 self.th = self.th + th

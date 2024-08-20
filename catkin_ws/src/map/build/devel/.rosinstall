@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/noura/catkin_ws/src/map/build/devel/setup.sh

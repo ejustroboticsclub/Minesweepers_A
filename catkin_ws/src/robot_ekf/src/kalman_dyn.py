@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import numpy as np
+import math
 import rospy
 from scipy.linalg import block_diag
 from tf.transformations import euler_from_quaternion
@@ -88,6 +89,7 @@ class KalmanClass:
             self.estimated_P = mat @ self.previous_P
         else:
             self.not_first_time = True
+        rospy.loginfo("Estimated Pose: x=%f, y=%f, theta=%f", self.estimated_x[0, 0], self.estimated_x[1, 0], self.estimated_x[2, 0])
 
         return error
 
@@ -99,8 +101,9 @@ class KalmanClass:
         theta = self.estimated_x[2, 0]
         msg_pose.x = x
         msg_pose.y = y
-        msg_pose.theta = theta * (180/3.14)
+        msg_pose.theta = theta * (180/(math.pi))
         pub.publish(msg_pose)
+        rospy.loginfo("Publishing Pose: x=%f, y=%f, theta=%f", x, y, theta)
 
 class Caller:
     def __init__(self):
@@ -120,7 +123,7 @@ class Caller:
         self.time_stamp = None
 
         self.odom_sub = rospy.Subscriber('/odom', Odometry, self.callback_odom)
-        self.imu_sub = rospy.Subscriber('/imu_data', Imu, self.callback_imu)
+        self.imu_sub = rospy.Subscriber('/imu/data', Imu, self.callback_imu)
 
     def callback_odom(self, msg):
         self.time_stamp = msg.header.stamp
