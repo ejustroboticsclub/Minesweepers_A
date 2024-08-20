@@ -42,13 +42,13 @@
     - [x] Done
 - Mapping GUI 
   - [x] In Progress 
-  - [ ] Done
+  - [x] Done
 - Streaming
   - [x] In Progress 
   - [x] Done
 - Launch Files preparation 
   - [x] In Progress 
-  - [ ] Done
+  - [x] Done
 - Assemble electrical components 
   - [X] In Progress 
   - [ ] Done
