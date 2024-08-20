@@ -58,10 +58,10 @@ Set the following parameters for EKF in your ROS launch file or using the rospar
 <param name="imu_covariance" value="[0.1, 0.1]" />
 ```
 **Running the node**
-```roslaunch ekf_pose_estimation ekf.launch```
+```roslaunch ekf_node ekf.launch```
 
 **Node Description**
-ekf_node/kalman_dyn.py: Main script for running the EKF. It subscribes to /odom and /imu_data, performs EKF updates, and publishes the pose to /pose_combined.
+ekf_node/kalman_dyn.py: Main script for running the EKF. It subscribes to /odom and /imu/data, performs EKF updates, and publishes the pose to /pose_combined.
 
 
 
