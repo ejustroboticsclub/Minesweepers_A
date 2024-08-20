@@ -1,4 +1,12 @@
 ### How to launch all RPi nodes:
+first on the laptop run 
+  ``` 
+  python ~/catkin_ws/src/yolo/src/yolo.py
+  ```
+then 
+  ```
+  python stream .py
+  ```
   ```
   python3 dawar.py
   ```
