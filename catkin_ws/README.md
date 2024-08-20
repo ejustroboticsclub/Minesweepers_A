@@ -1,4 +1,9 @@
 ### How to launch all laptop nodes
+  First, run the stream to make yolonode.py be able to send the readings to *detection_status* file
+  ``` 
+  python ~/catkin_ws/src/yolo/src/yolo.py
+  ```
+  Then سمـّي
   ```
   python3 sammy.py
   ```
