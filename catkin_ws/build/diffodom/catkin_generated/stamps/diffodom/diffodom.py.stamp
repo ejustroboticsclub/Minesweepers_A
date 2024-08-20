@@ -9,10 +9,10 @@ from tf.transformations import euler_from_quaternion
 
 
 from geometry_msgs.msg import Quaternion  
-from geometry_msgs.msg import Twist, Pose2D
+from geometry_msgs.msg import Pose2D
 from nav_msgs.msg import Odometry
 from tf.broadcaster import TransformBroadcaster
-from std_msgs.msg import Int32
+from std_msgs.msg import Int16
 
 #############################################################################
 class DiffTf:
@@ -61,9 +61,9 @@ class DiffTf:
         self.then = rospy.Time.now()
         
         # subscriptions
-        rospy.Subscriber("left_ticks", Int32, self.lwheelCallback, queue_size=1)
-        rospy.Subscriber("right_ticks", Int32, self.rwheelCallback, queue_size=1)
-        rospy.Subscriber("/imu/data", Imu, self.imu_callback)
+        rospy.Subscriber("left_ticks", Int16, self.lwheelCallback, queue_size=1)
+        rospy.Subscriber("right_ticks", Int16, self.rwheelCallback, queue_size=1)
+        rospy.Subscriber("/imu_data", Imu, self.imu_callback)
 
         self.odomPub = rospy.Publisher("odom", Odometry, queue_size=10)
         self.pose_pub = rospy.Publisher("/robot_2d", Pose2D, queue_size=10)
