@@ -1,5 +1,5 @@
 # motor_controller ROS Node
-
+### **Not used due to OS Overhead in RPi and transferred everything to Arduino mega**
 ## Overview
 
 The Motor Controller ROS Node is a Python-based ROS node designed to control a differential drive robot using PWM signals to drive four motors. It subscribes to the `/cmd_vel` topic to receive velocity commands and translates them into motor speeds and directions.
