@@ -3,7 +3,7 @@ import socket
 import struct
 import numpy as np
 from ultralytics import YOLO
-from PIL import Image
+# from PIL import Image
 
 # Configuration
 host = '0.0.0.0'  # Listen on all interfaces

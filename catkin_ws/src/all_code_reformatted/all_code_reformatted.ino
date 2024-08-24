@@ -77,10 +77,10 @@ void controllerCallback(const std_msgs::Int16 &gripper) {
     digitalWrite(magnet, HIGH);
   } else if (gripper.data == 8) {
     digitalWrite(Grip_Dir, HIGH);
-    analogWrite(Grip_Speed, 160);
+    analogWrite(Grip_Speed, 80);
   } else if (gripper.data == 7) {
     digitalWrite(Grip_Dir, LOW);
-    analogWrite(Grip_Speed, 160);
+    analogWrite(Grip_Speed, 80);
   } else {
     digitalWrite(Grip_Dir, HIGH);
     analogWrite(Grip_Speed, 0);

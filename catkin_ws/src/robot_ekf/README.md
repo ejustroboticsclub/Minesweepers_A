@@ -22,7 +22,7 @@ The `robot_ekf` package includes:
    Install the required Python packages:
 
    ```
-   pip3 install numpy scipy
+   pip3 install numpy scipy rospy
 2.**Clone the Repository**
 
 Clone this repository to your ROS workspace:
@@ -58,10 +58,10 @@ Set the following parameters for EKF in your ROS launch file or using the rospar
 <param name="imu_covariance" value="[0.1, 0.1]" />
 ```
 **Running the node**
-```roslaunch ekf_node ekf.launch```
+```roslaunch ekf_pose_estimation ekf.launch```
 
 **Node Description**
-ekf_node/kalman_dyn.py: Main script for running the EKF. It subscribes to /odom and /imu/data, performs EKF updates, and publishes the pose to /pose_combined.
+ekf_node/kalman_dyn.py: Main script for running the EKF. It subscribes to /odom and /imu_data, performs EKF updates, and publishes the pose to /pose_combined.
 
 
 
