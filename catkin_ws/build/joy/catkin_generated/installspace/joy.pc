@@ -1,8 +1,0 @@
-prefix=/home/ahmed/catkin_ws/install
-
-Name: joy
-Description: Description of joy
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
