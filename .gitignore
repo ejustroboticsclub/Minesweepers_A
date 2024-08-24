@@ -1,0 +1,12 @@
+/catkin_ws/src/map/.vscode/
+/catkin_ws/src/map/src/.vscode/
+/catkin_ws/src/map/src/__pycache__/
+/__pycache__
+/.vscode
+/wiringpi
+/catkin_ws/build
+/catkin_ws/devel
+/catkin_ws/install
+/rpi_ws/build
+/rpi_ws/devel
+/catkin_ws/src/rosserial
