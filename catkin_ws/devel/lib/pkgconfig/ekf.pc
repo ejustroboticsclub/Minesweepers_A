@@ -1,8 +1,0 @@
-prefix=/home/ahmed/catkin_ws/devel
-
-Name: ekf
-Description: Description of ekf
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
