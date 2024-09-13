@@ -51,13 +51,13 @@
   - [x] Done
 - Assemble electrical components 
   - [X] In Progress 
-  - [ ] Done
+  - [x] Done
 - Fabricate mechanical parts 
   - [x] In Progress 
-  - [ ] Done
+  - [x] Done
 - Assemble mechanical parts 
   - [x] In Progress 
-  - [ ] Done
+  - [x] Done
 - Test and integrate all components 
   - [x] In Progress 
   - [ ] Done
@@ -67,6 +67,13 @@
 - Prepare for the final presentation 
   - [ ] In Progress 
   - [ ] Done
+- Line changing color for picking the mine 
+  - [x] In Progress 
+  - [ ] Done
+- Autonomous Gripping 
+  - [ ] In Progress 
+  - [ ] Done
+  
 --------------------------------------------------------------------
 ## How to launch
 
