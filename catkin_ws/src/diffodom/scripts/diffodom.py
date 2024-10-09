@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 import rospy
 from math import sin, cos  # , pi
 from sensor_msgs.msg import Imu

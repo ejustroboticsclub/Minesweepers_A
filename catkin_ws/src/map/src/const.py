@@ -57,12 +57,13 @@ CORNER_POSITIONS = {
 
 # Orientation cells relative to corner positions (adjacent cells)
 ORIENTATION_OFFSETS = {
-    CornerPosition.BOTTOM_LEFT: ((1, 0), (0, 1)),  # Right and above
-    CornerPosition.BOTTOM_RIGHT: ((0, 1), (-1, 0)),  # Left and above
-    CornerPosition.TOP_LEFT: ((1, 0), (0, -1)),  # Right and below
-    CornerPosition.TOP_RIGHT: ((0, -1), (-1, 0)),  # Left and below
+    CornerPosition.BOTTOM_LEFT: ((1, 0), (0, 1)),  # Right and Above
+    CornerPosition.BOTTOM_RIGHT: ((0, 1), (-1, 0)),  # Above and Left
+    CornerPosition.TOP_LEFT: ((1, 0), (0, -1)),  # Right and Below
+    CornerPosition.TOP_RIGHT: ((0, -1), (-1, 0)),  # Below and Left
 }
 # Orientation directions (relative to the corner cells)
+# To verify you have to check the location of the imu sensor on the robot
 ORIENTATIONS = {
     CornerPosition.BOTTOM_LEFT: (0, 90),
     CornerPosition.BOTTOM_RIGHT: (90, 180),

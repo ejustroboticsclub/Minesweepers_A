@@ -62,43 +62,29 @@ class RobotCoordinates:
             if orientation_offset is not None:
                 self.theta = (
                     data.theta + orientation_offset
-                )  # The theta value is already in radians
-                if active_corner == CornerPosition.BOTTOM_LEFT:
-                    if orientation_offset == 0:
-                        self.x = data.x
-                        self.y = data.y
-                    elif orientation_offset == 90:
-                        self.x = data.y
-                        self.y = data.x
-                elif active_corner == CornerPosition.BOTTOM_RIGHT:
-                    if orientation_offset == 90:
-                        self.x = const.MAP_WIDTH - data.y - 1
-                        self.y = data.x
-                    elif orientation_offset == 180:
-                        self.x = const.MAP_WIDTH - data.x - 1
-                        self.y = data.y
-                elif active_corner == CornerPosition.TOP_LEFT:
-                    if orientation_offset == 0:
-                        self.x = data.x
-                        self.y = const.MAP_HEIGHT - data.y - 1
-                    elif orientation_offset == -90:
-                        self.x = data.y
-                        self.y = const.MAP_HEIGHT - data.x - 1
-                elif active_corner == CornerPosition.TOP_RIGHT:
-                    if orientation_offset == 180:
-                        self.x = const.MAP_WIDTH - data.x - 1
-                        self.y = const.MAP_HEIGHT - data.y - 1
-                    elif orientation_offset == -90:
-                        self.x = const.MAP_HEIGHT - data.y - 1
-                        self.y = const.MAP_HEIGHT - data.x - 1
-                else:
-                    rospy.loginfo("orientation_offset is not received")
-
+                )  # The theta value is already in
+                # change of coordinates for the robot's orientation using rotation
+                offset_angle_rad = math.radians(orientation_offset)
+                self.x = data.x * math.cos(offset_angle_rad) - data.y * math.sin(
+                    offset_angle_rad
+                )
+                self.y = data.x * math.sin(offset_angle_rad) + data.y * math.cos(
+                    offset_angle_rad
+                )
+                # translation
+                assert active_corner is not None
+                reference_x, reference_y = const.CORNER_POSITIONS[active_corner]
+                self.x += reference_x
+                self.y += reference_y
             rospy.loginfo(
                 f"Robot position: ({self.x}, {self.y}), Orientation: {self.theta:.2f} Degrees"
             )
         except Exception as e:
             rospy.logerr(f"Exception in robot_pose_callback: {e}")
+
+    def set_X_Y_coordinates(self, x: float, y: float) -> None:
+        self.x = x
+        self.y = y
 
 
 robot_coordinates = RobotCoordinates()
@@ -124,10 +110,7 @@ def metal_detector_callback(data: Bool) -> None:
 
 def mine_detection_callback() -> None:
     global first_detection, map_data
-
-    if not selection_complete:
-        rospy.loginfo("Selection of corner and orientation not complete.")
-        return
+    assert selection_complete is True
 
     if metal_detected:
         mine_type = MineType.SURFACE if camera_detected else MineType.BURIED
@@ -231,8 +214,7 @@ def draw_map(screen: pygame.Surface) -> None:
 
 # Function to draw the corner and orientation cells
 def draw_corner_orientation_cells(screen: pygame.Surface) -> None:
-    if selection_complete:
-        return  # No drawing if selection is complete
+    assert selection_complete is False
 
     if active_corner is not None:
         # Draw only the active corner cell
@@ -252,6 +234,8 @@ def draw_corner_orientation_cells(screen: pygame.Surface) -> None:
         for i, (ox, oy) in enumerate(const.ORIENTATION_OFFSETS[active_corner]):
             orientation_x = corner_x + ox
             orientation_y = corner_y + oy
+            assert 0 <= orientation_x < const.MAP_WIDTH
+            assert 0 <= orientation_y < const.MAP_HEIGHT
             if (
                 0 <= orientation_x < const.MAP_WIDTH
                 and 0 <= orientation_y < const.MAP_HEIGHT
@@ -311,9 +295,7 @@ def draw_corner_orientation_cells(screen: pygame.Surface) -> None:
 # Function to handle mouse click events
 def handle_mouse_click(pos: "tuple[int, int]") -> None:
     global active_corner, active_orientation, selection_complete, orientation_offset
-
-    if selection_complete:
-        return  # Ignore clicks if selection is complete
+    assert selection_complete is False
 
     mouse_x, mouse_y = pos
     grid_x = mouse_x // const.TILE_SIZE
@@ -324,19 +306,19 @@ def handle_mouse_click(pos: "tuple[int, int]") -> None:
         for corner, (cx, cy) in const.CORNER_POSITIONS.items():
             if grid_x == cx and grid_y == cy:
                 active_corner = corner
-                robot_coordinates.x = grid_x
-                robot_coordinates.y = grid_y
+                robot_coordinates.set_X_Y_coordinates(grid_x, grid_y)
                 print(f"Selected corner: {corner}")
                 return
 
     # Check if the click is on an orientation cell
-    if active_corner:
+    else:
         for i, (ox, oy) in enumerate(const.ORIENTATION_OFFSETS[active_corner]):
             orientation_x = const.CORNER_POSITIONS[active_corner][0] + ox
             orientation_y = const.CORNER_POSITIONS[active_corner][1] + oy
             if grid_x == orientation_x and grid_y == orientation_y:
                 active_orientation = (active_corner, i)
                 orientation_offset = const.ORIENTATIONS[active_corner][i]
+                robot_coordinates.theta = const.ORIENTATIONS[active_corner][i]
                 print(f"Selected orientation: {robot_coordinates.theta} degrees")
                 selection_complete = True  # Mark selection as complete
                 return
@@ -431,15 +413,18 @@ def main() -> int:
                 running = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 # Handle click on map (corner or orientation)
-                handle_mouse_click(event.pos)
+                if not selection_complete:
+                    handle_mouse_click(event.pos)
 
-        mine_detection_callback()
+        if selection_complete:
+            mine_detection_callback()
 
         # Draw the map
         draw_map(screen)
 
         # Draw the corner and orientation cells
-        draw_corner_orientation_cells(screen)
+        if not selection_complete:
+            draw_corner_orientation_cells(screen)
 
         # Draw the tables
         draw_tables(surface_table_surface, buried_table_surface)

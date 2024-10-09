@@ -3,7 +3,6 @@ import socket
 import struct
 import numpy as np
 from ultralytics import YOLO
-from PIL import Image
 
 
 class YOLOProcessor:
@@ -19,11 +18,13 @@ class YOLOProcessor:
     @staticmethod
     def draw_boxes(image, detections, confidences, color):
         for (x1, y1, x2, y2), conf in zip(detections, confidences):
-            cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), color, 1)
+            cv2.rectangle(
+                image, (int(x1), int(y1 + 110)), (int(x2), int(y2 + 110)), color, 1
+            )
             cv2.putText(
                 image,
                 f"Confidence: {conf:.2f}",
-                (int(x1), int(y1) - 10),
+                (int(x1), int(y1) + 100),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 0.5,
                 color,
@@ -33,7 +34,7 @@ class YOLOProcessor:
 
 
 class FrameProcessor:
-    def __init__(self, y_line=300):
+    def __init__(self, y_line=400):
         self.y_line = y_line
 
     def flip_vertical(self, frame):
@@ -140,6 +141,10 @@ class VideoServer:
         cv2.destroyAllWindows()
 
 
-if __name__ == "__main__":
+def main():
     server = VideoServer()
     server.start()
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

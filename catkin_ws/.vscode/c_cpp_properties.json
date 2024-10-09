@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ahmed/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/media/ahmed/Work/Robotics Club/Minesweepers/Minesweepers_A/catkin_ws/devel/include/**",
+        "/home/ahmed/catkin_ws/src/map/include/**",
+        "/home/ahmed/catkin_ws/src/rosserial/rosserial_server/include/**",
+        "/home/ahmed/catkin_ws/src/rosserial/rosserial_test/include/**",
+        "/home/ahmed/catkin_ws/src/yolo/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
