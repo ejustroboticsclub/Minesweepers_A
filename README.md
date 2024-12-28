@@ -68,13 +68,18 @@
   - [ ] In Progress 
   - [ ] Done
 - Line changing color for picking the mine 
-  - [x] In Progress 
+  - [ ] In Progress 
   - [ ] Done
 - Autonomous Gripping 
-  - [ ] In Progress 
+  - [x] In Progress 
   - [ ] Done
   
 --------------------------------------------------------------------
+## Optimizations (Subject to time):  
+  - Use **YOLO-Fast** (unofficial YOLO Model) instead of YOLOv8n [ ]
+  - Autonomous **Navigation** (20% Bonus) [ ]
+--------------------------------------------------------------------
+
 ## How to launch
 
 <div align="center">
