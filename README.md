@@ -76,7 +76,8 @@
   
 --------------------------------------------------------------------
 ## Optimizations (Subject to time):  
-- [ ] Use **YOLO-Fast** (unofficial YOLO Model) instead of YOLOv8n  
+- [ ] Use **YOLO-Fast** (unofficial YOLO Model) instead of YOLOv8n
+[Fast YOLO: A Fast You Only Look Once System for Real-time Embedded Object Detection in Video](https://arxiv.org/abs/1709.05943)
 - [ ] Autonomous **Navigation** (**20 %** Bonus)
 --------------------------------------------------------------------
 
