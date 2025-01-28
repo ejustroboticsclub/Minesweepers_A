@@ -182,7 +182,7 @@ class DiffTf:
             self.yaw_prev = self.yaw
 
             # distance traveled is the average of the two wheels
-            d = d_right
+            d = d_right + d_left / 2.0
             th = delta_yaw
 
             # publish the odom information
