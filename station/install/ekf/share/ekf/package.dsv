@@ -1,0 +1,11 @@
+source;share/ekf/hook/cmake_prefix_path.ps1
+source;share/ekf/hook/cmake_prefix_path.dsv
+source;share/ekf/hook/cmake_prefix_path.sh
+source;share/ekf/hook/pythonpath.ps1
+source;share/ekf/hook/pythonpath.dsv
+source;share/ekf/hook/pythonpath.sh
+source;share/ekf/local_setup.bash
+source;share/ekf/local_setup.dsv
+source;share/ekf/local_setup.ps1
+source;share/ekf/local_setup.sh
+source;share/ekf/local_setup.zsh

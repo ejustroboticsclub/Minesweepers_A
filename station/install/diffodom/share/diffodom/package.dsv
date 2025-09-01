@@ -1,0 +1,11 @@
+source;share/diffodom/hook/cmake_prefix_path.ps1
+source;share/diffodom/hook/cmake_prefix_path.dsv
+source;share/diffodom/hook/cmake_prefix_path.sh
+source;share/diffodom/hook/pythonpath.ps1
+source;share/diffodom/hook/pythonpath.dsv
+source;share/diffodom/hook/pythonpath.sh
+source;share/diffodom/local_setup.bash
+source;share/diffodom/local_setup.dsv
+source;share/diffodom/local_setup.ps1
+source;share/diffodom/local_setup.sh
+source;share/diffodom/local_setup.zsh

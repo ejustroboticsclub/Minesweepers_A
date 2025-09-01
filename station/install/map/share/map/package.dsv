@@ -1,0 +1,15 @@
+source;share/map/hook/cmake_prefix_path.ps1
+source;share/map/hook/cmake_prefix_path.dsv
+source;share/map/hook/cmake_prefix_path.sh
+source;share/map/hook/pythonpath.ps1
+source;share/map/hook/pythonpath.dsv
+source;share/map/hook/pythonpath.sh
+source;share/map/hook/ros_package_path.ps1
+source;share/map/hook/ros_package_path.dsv
+source;share/map/hook/ros_package_path.sh
+source;share/map/hook/catkin_pythonpath.ps1
+source;share/map/hook/catkin_pythonpath.dsv
+source;share/map/hook/catkin_pythonpath.sh
+source;share/map/hook/pkg_config_path.ps1
+source;share/map/hook/pkg_config_path.dsv
+source;share/map/hook/pkg_config_path.sh
